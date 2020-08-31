@@ -1,0 +1,1 @@
+<?php include_once("hope-quotes.html"); ?>

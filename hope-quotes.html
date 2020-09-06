@@ -17,10 +17,15 @@
   <body>
     <div id="root"></div>
     <style>
+      @import url("https://fonts.googleapis.com/css?family=Special+Elite");
       body {
-        font-family: sans-serif;
-        background-color: white;
-        /* font-weight: bold; */
+        font-family: "Special Elite", cursive;
+        background: #fffdf5;
+        color: #3f3f5a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .text-box {
@@ -53,6 +58,7 @@
       }
 
       .btn-white {
+        font-family: sans-serif;
         background-color: green;
         color: white;
       }
@@ -95,6 +101,44 @@
           transform: translateY(0px);
         }
       }
+
+      blockquote {
+        font-weight: 100;
+        font-size: 25px;
+        max-width: 600px;
+        line-height: 1.4;
+        position: relative;
+        margin: 0;
+        padding: 0.5rem;
+      }
+
+      blockquote:before,
+      blockquote:after {
+        position: absolute;
+        color: #f1efe6;
+        font-size: 8rem;
+        width: 4rem;
+        height: 4rem;
+      }
+
+      blockquote:before {
+        content: "“";
+        left: -5rem;
+        top: -2rem;
+      }
+
+      blockquote:after {
+        content: "”";
+        right: -5rem;
+        bottom: 1rem;
+      }
+
+      cite {
+        line-height: 3;
+        text-align: left;
+        font-size: 20px;
+        color: #ababab;
+      }
     </style>
     <script type="text/babel">
       //
@@ -102,303 +146,1251 @@
       //
 
       const quotes = [
-        "A ship ought not to be held by one anchor, nor life by a single hope. ~ Epictetus",
-        "A strange thing is memory, and hope; one looks backward, and the other forward; one is of today, the other of tomorrow. ~ Anna Mary Robertson ('Grandma') Moses",
-        "All human wisdom is summed up in two words – wait and hope. ~ Alexandre Dumas",
-        "All it takes is one bloom of hope to make a spiritual garden. ~ Terri Guillemets",
-        "All kids need is a little help, a little hope and somebody who believes in them. ~ Magic Johnson",
-        "All the great spiritual leaders in history were people of hope. Abraham, Moses, Ruth, Mary, Jesus, Rumi, Gandhi, and Dorothy Day all lived with a promise in their hearts that guided them toward the future without the need to know exactly what it would look like. Let's live with hope. ~ Henri Nouwen",
-        "As great scientists have said and as all children know, it is above all by the imagination that we achieve perception, and compassion, and hope. ~ Ursula K. LeGuin",
-        "As I see it, in everything that we do, we need to come down on the side of life and hope. ~ F. Tustin",
-        "Believe in the incredible power of the human mind. Of doing something that makes a difference. Of working hard. Of laughing and hoping. ~ Dream Big",
-        "But groundless hope, like unconditional love, is the only kind worth having. ~ John Perry Barlow",
-        "But I know, somehow, that only when it is dark enough can you see the stars. ~ Martin Luther King Jr.",
-        "But keep on working and hoping still. For in spite of the grumblers who stand about, somehow, it seems, all things work out. ~ Edgar Guest",
-        "Change has a considerable psychological impact on the human mind. To the fearful it is threatening because it means that things may get worse. To the hopeful it is encouraging because things may get better. ~ King Whitney Jr",
-        "Consult not your fears but your hopes and dreams, think not about your frustrations, but about your unfulfilled potential. Concern yourself not with what you tried and failed in, but with what is still possible for you to do. ~ Pope John XXIII",
-        "Courage is like love; it must have hope for nourishment. ~ Napoleon I",
-        "Do not spoil what you have by desiring what you have not; but remember that what you now have was once among the things you only hoped for. ~ Epicurus",
-        "Each of us has the power to give life meaning, to make our time and our bodies and our words into instruments of love and hope. ~ Tom Head",
-        "Each time a person stands up for an ideal, or acts to improve the lot of others, or strikes out against injustice, he sends forth a tiny ripple of hope, and crossing each other from a million different centers of energy and daring, these ripples build a current that can sweep down the mightiest walls of oppression and resistance. ~ Robert F. Kennedy",
-        "Enthusiasm is the yeast that makes your hopes rise to the stars. ~ Henry Tor",
-        "Every area of trouble gives out a ray of hope; and the one unchangeable certainty is that nothing is certain or unchangeable. ~ John Fitzgerald Kennedy",
-        "Every parent is at some time the father of the unreturned prodigal, with nothing to do but keep his house open to hope. ~ John Ciardi",
-        "Every time you stand up for an ideal, you send forth a tiny ripple of hope. ~ Robert Kennedy",
-        "Everything that is done in the world is done by hope. ~ Dr. Martin Luther King Jr.",
-        "Expect to have hope rekindled. Expect your prayers to be answered in wondrous ways. The dry seasons in life do not last. The spring rains will come again. ~ Sarah Ban Breathnach ",
-        "Extreme hopes are born of extreme misery. ~ Bertrand Russell",
-        "Faith goes up the stairs that love has built and looks out the window which hope has opened. ~ Charles Spurgeon",
-        "Faith walks simply, childlike, between the darkness of human life and the hope of what is to come. ~ Catherine de Hueck Doherty",
-        "Fear can hold you prisoner. Hope can set you free. ~ Stephen King (The Shawshank Redemption)",
-        "Fear less, hope more; eat less, chew more; whine less, breathe more; talk less, say more; hate less, love more; and all good things are yours. ~ Swedish proverb",
-        "For like a shaft, clear and cold, the thought pierced him that in the end the Shadow was only a small and passing thing: there was light and high beauty for ever beyond its reach. ~ J. R. R. Tolkien (The Return of the King)",
-        "Forgiving means to pardon the unpardonable, Faith means believing the unbelievable, And hoping means to hope when things are hopeless. ~ G. K. Chesterton",
-        "Great hopes make great men. ~ Thomas Fuller",
-        "Have hope. Though clouds environs now, And gladness hides her face in scorn, Put thou the shadow from thy brow - No night but hath its morn. ~ J. C. F. von Schiller",
-        "He that lives in hope danceth without musick. ~ George Herbert",
-        "He who does not hope to win has already lost. ~ Jose' Joaquin Olmedo",
-        "He who has health has hope; and he who has hope has everything ~ Arabian Proverb",
-        "Hold your head high, stick your chest out. You can make it. It gets dark sometimes, but morning comes. Keep hope alive. ~ Jesse Jackson",
-        "Hope ... is not a feeling; it is something you do. ~ Katherine Paterson",
-        "Hope and faith are two intimate brothers; they always go together. Hope nourishes faith and faith treasures hope. ~ Sri Chinmoy ",
-        "Hope and fear are inseparable. ~ La Rochefoucauld",
-        "Hope and patience are two sovereign remedies for all, the surest reposals, the softest cushions to lean on in adversity. ~ Robert Burton",
-        "Hope arouses, as nothing else can arouse, a passion for the possible. ~ William Sloan Coffin",
-        "Hope begins in the dark, the stubborn hope that if you just show up and try to do the right thing, the dawn will come. You wait and watch and work: You don't give up. ~ Anne Lamott",
-        "Hope can be a powerful force. Maybe there’s no actual magic in it, but when you know what you hope for most and hold it like a light within you, you can make things happen, almost like magic. ~ Laini Taylor",
-        "Hope changes everything. It changes winter into summer, darkness into dawn, descent into ascent, barrenness into creativity, agony into joy. ~ Daisaku Ikeda",
-        "Hope cherishes no illusions, nor does it yield to cynicism. ~ Father James Keller",
-        "Hope dies last. (Or Hope is the last thing to be lost) (Lo ultimo que muere es la esperanza) ~ Spanish proverb",
-        "Hope discovers what can be done instead of grumbling about what cannot. ~ Father James Keller",
-        "Hope doesn't come from calculating whether the good news is winning out over the bad. It's simply a choice to take action. ~ Anna Lappe",
-        "Hope has as many lives as a cat or a king. ~ Henry Wadsworth Longfellow",
-        "Hope is a belief in a positive outcome related to events and circumstances in one's life. Hope is the feeling that what is wanted can be had or that events will turn out for the best. ~ Wikipedia",
-        "Hope is a good thing – maybe the best thing, and no good thing ever dies. ~ Stephen King (The Shawshank Redemption)",
-        "Hope is a light we keep inside that no one can touch. ~ Jermaine J. Evans",
-        "Hope is a renewable option: If you run out of it at the end of the day, you get to start over in the morning. ~ Barbara Kingsolver",
-        "Hope is a risk that must be run. ~ Georges Bernanos",
-        "Hope is a satisfaction unto itself, and need not be fulfilled to be appreciated. ~ Dr. Fred O. Henker",
-        "Hope is a song in a weary throat. ~ Pauli Murray",
-        "Hope is a state of mind, not of the world. Hope, in this deep and powerful sense, is not the same as joy that things are going well, or willingness to invest in enterprises that are obviously heading for success, but rather an ability to work for something because it is good. ~ Vaclav Havel",
-        "Hope is a talent like any other. ~ Storm Jameson",
-        "Hope is a vigorous principle ... it sets the head and heart to work, and animates a man to do his utmost. ~ Jeremy Collier",
-        "Hope is a waking dream. ~ Aristotle",
-        "Hope is always available to us. When we feel defeated, we need only take a deep breath and say, Yes, and hope will reappear. ~ Monroe Forester",
-        "Hope is an adventure, a going forward, a confident search for a rewarding life. ~ Dr. Karl Menninger",
-        "Hope is an essential constituent of human life. ~ Benjamin Franklin",
-        "Hope is being able to see that there is light despite all of the darkness. ~ Desmond Tutu",
-        "Hope is both the earliest and the most indispensable virtue inherent in the state of being alive. If life is to be sustained hope must remain, even where confidence is wounded, trust impaired. ~ Erik H. Erikson",
-        "Hope is brightest when it dawns from fears. ~ Sir Walter Scott",
-        "Hope is desire and expectation rolled into one. ~ Ambrose Bierce",
-        "Hope is faith holding out its hand in the dark. ~ George Iles",
-        "Hope is important because it can make the present moment less difficult to bear. If we believe that tomorrow will be better, we can bear a hardship today. ~ Thich Nhat Hanh",
-        "Hope is itself a species of happiness and, perhaps, the chief happiness which this world affords. ~ Samuel Johnson",
-        "Hope is life's greatest treasure. ~ Daisaku Ikeda",
-        "Hope is like a road in the country; there was never a road, but when many people walk on it, the road comes into existence. ~ Lin Yutang",
-        "Hope is like the sun, which, as we journey towards it, casts the shadow of our burden behind us ~ Samuel Smiles",
-        "Hope is love's happiness, but not its life. ~ Letitia E. Landon",
-        "Hope is man's inner effort. ~ Sri Chinmoy",
-        "Hope is man's preparation for the unknown. ~ Sri Chinmoy",
-        "Hope is medicine for a soul that's sick and tired. ~ Eric Swensson",
-        "Hope is necessary in every condition. The miseries of poverty, sickness, of captivity, would, without this comfort, be insupportable. ~ Samuel Johnson",
-        "Hope is not a dream, but a way of making dreams become reality. ~ L. J. Cardinal Suenens",
-        "Hope is not a granted wish or a favor performed; no it is far greater than that. It is a zany, unpredictable dependence on a God who loves to surprise us out of our socks. ~ Max Lucado",
-        "Hope is not a matter of waiting for things outside of us to get better. It is about getting better inside about what is going on outside. ~ Joan Chittister",
-        "Hope is not blind optimism. It's not ignoring the enormity of the task ahead, or the roadblocks that stand in our path. It's not sitting on the sidelines or shirking from a fight. Hope is that thing inside us that insists, despite all the evidence to the contrary, that something better awaits us if we have the courage to reach for it, work for it, and fight for it. ~ Barack Obama",
-        "Hope is not the conviction that something will turn out well but the certainty that something makes sense, regardless of how it turns out. ~ Vaclav Havel",
-        "Hope is one of the principal springs that keep mankind in motion. ~ Thomas Fuller",
-        "Hope is one of those things in life you cannot do without. ~ LeRoy Douglas",
-        "Hope is only the love of life. ~ Henri Frederic Amiel",
-        "Hope is outreaching desire with expectancy of good. It is a characteristic of all living beings. ~ Edward S. Ame",
-        "Hope is patience with the lamp lit. ~ Tertullian",
-        "Hope is putting faith to work when doubting would be easier. ~ Author Unknown",
-        "Hope is some extraordinary spiritual grace that God gives us to control our fears, not to oust them. ~ Vincent McNabb",
-        "Hope is the 'yes' to life ~ Dr. Ronna Jevne",
-        "Hope is the anchor of the soul, the stimulus to action, and the incentive to achievement. ~ Anonymous",
-        "Hope is the belief, more or less strong, that joy will come. ~ Sydney Smith",
-        "Hope is the best possession. ~ William Hazlitt",
-        "Hope is the companion of power, and mother of success; for who so hopes strongly has within him the gift of miracles. ~ Samuel Smiles",
-        "Hope is the dream of a soul awake. ~ French Proverb",
-        "Hope is the feeling that life and work have a meaning. You either have it or you don't, regardless of the state of world that surrounds you. ~ Vaclav Havel",
-        "Hope is the feeling you have that the feeling you have isn't permanent. ~ Jean Kerr",
-        "Hope is the first thing to take some sort of action. ~ John Armstrong",
-        "Hope is the mainspring of life. ~ Henry L. Stimson",
-        "Hope is the only bee that makes honey without flowers. ~ Robert Ingersoll",
-        "Hope is the parent of faith. ~ C. A. Bartol",
-        "Hope is the physician of each misery.  ~ Irish Proverb",
-        "Hope is the pillar that holds up the world. ~ Pliny the Elder",
-        "Hope is the positive mode of awaiting the future. ~ Emil Brunner",
-        "Hope is the power of being cheerful in circumstances which we know to be desperate. ~ G. K. Chesterton",
-        "Hope is the sun. It is light. It is passion. It is the fundamental force for life's blossoming. ~ Daisaku Ikeda",
-        "Hope is the thing with feathers, that perches in the soul, and sings the tune without words, and never stops at all. ~ Emily Dickinson",
-        "Hope is the word which God has written on the brow of every man. ~ Victor Hugo",
-        "Hope lies in dreams, in imagination, and in the courage of those who dare to make dreams into reality. ~ Jonas Salk",
-        "Hope lights a candle instead of cursing the darkness. ~ Father James Keller",
-        "Hope means believing in spite of the evidence, and then watching the evidence change. ~ Jim Wallis",
-        "Hope opens doors where despair closes them. ~ Father James Keller",
-        "Hope plays an integral part in knowing - knowing myself, knowing others. ~ Casey Boodt",
-        "Hope puts up with modest gains, realizing that the longest journey starts with one step. ~ Father James Keller",
-        "Hope regards problems, small or large, as opportunities. ~ Father James Keller",
-        "Hope sees the invisible, feels the intangible and achieves the impossible. ~ Charles Caleb Colton",
-        "Hope smiles from the threshold of the year to come, whispering, 'It will be happier.' ~ Alfred Lord Tennyson",
-        "Hope springs eternal in the human breast. ~ Alexander Pope",
-        "Hope transforms pessimism into optimism. Hope is invincible. ~ Daisaku Ikeda",
-        "Hope unbelieved is always considered nonsense. But hope believed is history in the process of being changed. ~ Jim Wallis",
-        "Hope will never be silent. ~ Harvey Milk",
-        <p>
-          "Hope, like the gleaming taper's light", "Adorns and cheers our way;",
-          "And still, as darker grows the night,", "Emits a brighter ray. ~
-          Oliver Goldsmith",
-        </p>,
-        "Hope, that star of life's tremulous ocean. ~ Paul Moon James",
-        "Hopeful thinking can get you out of your fear zone and into your appreciation zone. ~ Martha Beck",
-        "Hopes, dreams, faith and a sense of mission enable us to open up our lives. ~ Daisaku Ikeda",
-        "I always entertain great hopes. ~ Robert Frost",
-        "I am not an optimist, because I am not sure that everything ends well. Nor am I a pessimist, because I am not sure that everything ends badly. I just carry hope in my heart. ~ Vaclav Havel",
-        "I believe that imagination is stronger than knowledge. That myth is more potent than history.  That dreams are more powerful than facts. That hope always triumphs over experience. That laughter is the only cure for grief. And I believe that love is stronger than death. ~ Robert Fulghum",
-        "I cannot imagine that I could strive for something if I did not carry hope in me. ~ Vaclav Havel",
-        "I claim to be an average man of less than average ability. I have not the shadow of a doubt that any man or woman can achieve what I have, if he or she would make the same effort and cultivate the same hope and faith. ~ Mahatma Gandhi",
-        "I know that you cannot live on hope alone, but without it, life is not worth living. And you, and you, and you, and you have got to give them hope.” ~ Harvey Milk",
-        "I know the world is filled with troubles and many injustices. But reality is as beautiful as it is ugly. I think it is just as important to sing about beautiful mornings as it is to talk about slums. I just couldn't write anything without hope in it. ~ Oscar Hammerstein",
-        "I steer my bark with hope in the head, leaving fear astern. My hopes indeed sometimes fail, but not oftener than the forebodings of the gloomy. ~ Thomas Jefferson",
-        "If at first, the idea is not absurd, then there is no hope for it. ~ Albert Einstein",
-        "If children have the ability to ignore all odds and percentages, then maybe we can all learn from them. When you think about it, what other choice is there but to hope? We have two options, medically and emotionally: give up, or fight like hell. ~ Lance Armstrong",
-        "If it were not for hopes, the heart would break. ~ Thomas Fuller",
-        "If there is a reason to be hopeful, be hopeful.  It doesn't jinx anything. ~ Author Unknown",
-        "If we were logical, the future would be bleak indeed. But we are more than logical. We are human beings, and we have faith, and we have hope. ~ Jacques Cousteau",
-        "If you do not hope, you will not find what is beyond your hopes. ~ St. Clement of Alexandria",
-        "If you lose hope, somehow you lose the vitality that keeps life moving, you lose that courage to be, that quality that helps you go on in spite of it all. And so today I still have a dream. ~ Martin Luther King, Jr.",
-        "If you wish to succeed in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother, and hope your guardian genius. ~ Joseph Addison",
-        "In a world filled with hate, we must still dare to hope. In a world filled with anger, we must still dare to comfort. In a world filled with despair, we must still dare to dream. And in a world filled with distrust, we must still dare to believe. ~ Michael Jackson",
-        "In all pleasures hope is a considerable part. ~ Samuel Johnson",
-        "In all things it is better to hope than to despair ~ Johann Wolfgang von Goethe",
-        "In fact, hope is best gained after defeat and failure, because then inner strength and toughness is produced. ~ Fritz Napp",
-        "In our lives, where there is hope, the impossible moves within our grasp, and what seems difficult to reach waits but a breath away. ~ Author unknown",
-        "In the face of uncertainty, there is nothing wrong with hope. ~ Bernie S. Siegel",
-        "In the final analysis, the hope of every person is simply peace of mind. ~ Dalai Lama",
-        "In the night of death, hope sees a star, and listening love can hear the rustle of a wing. ~ Robert G. Ingersoll",
-        "In this life, anything can happen - and what can help bring it to pass is Hope ~ Claude M. Bristol",
-        "In time of trouble avert not thy face from hope, for the soft marrow abideth in the hard bone. ~ Hafez",
-        "Isn't it the moment of most profound doubt that gives birth to new certainties? Perhaps hopelessness is the very soil that nourishes human hope; perhaps one could never find sense in life without first experiencing its absurdity. ~ Vaclav Havel",
-        "It has never been, and never will be, easy work! But the road that is built in hope is more pleasant to the traveler than the road built in despair, even though they both lead to the same destination. ~ Marion Zimmer Bradley",
-        "It is a fact of life that we find ourselves in unpleasant demoralizing situations which we can neither escape nor control. We can keep our morale and spirits high by using both coping and hoping humor. Coping humor laughs at the hopelessness in our situation. It gives us the courage to hang in there, but it does not bring hope. The uniqueness of hoping humor lies in its acceptance of life with all its dichotomies, contradictions, and incongruities. It celebrates the hope in human life. From one comes courage, from the other comes inspiration. ~ Cy Eberhart",
-        "It is above all by the imagination that we achieve perception and compassion and hope ~ Ursula LeGuin",
-        "It is characteristic of genius to be hopeful and aspiring. ~ Harriet Martineau",
-        "It is difficult to say what is impossible, for the dream of yesterday is the hope of today and the reality of tomorrow. ~ Robert H Goddard",
-        "It is history that teaches us to hope. ~ Robert E. Lee",
-        "It is important for me to share my experiences in order to create strength and hope for others. No matter how far down you go, it is never too late to come back. ~ Theo Fleury",
-        "It is learning, individually and collectively, which makes us strong, gives us hope, and carries us forward. ~ Barbara Viniar",
-        "It's a lot better to hope than not to. ~ Benjamin J. Stein",
-        "It's hope as a decision that makes change possible. ~ Jim Wallis",
-        "It's the possibility that keeps me going, not the guarantee. ~ Nicholas Sparks (The Notebook)",
-        <p>
-          "Know then, whatever cheerful and serene", "Supports the mind,
-          supports the body too:", "Hence, the most vital movement mortals
-          feel", "Is hope, the balm and lifeblood of the soul. ~ John
-          Armstrong",
-        </p>,
-        "A leader is a dealer in hope. ~ Napoleon Bonaparte",
-        "Learn from yesterday, live for today, hope for tomorrow. ~ Albert Einstein",
-        "Let your hopes, not your hurts, shape your future. ~ Robert H. Schuller",
-        "A life without hope is bleak and grey. If you have no hope, create some. ~ Daisaku Ikeda",
-        "Man can live about forty days without food, about three days without water, about eight minutes without air ... but only for one second without hope. ~ Hal Lindsey",
-        "Man is a creature of hope and invention, both of which belie the idea that things cannot be changed. ~ Tom Clancy",
-        "Man needs, for his happiness, not only the enjoyment of this or that, but hope and enterprise and change. ~ Bertrand Russell",
-        "Man partly is and wholly hopes to be. ~ Robert Browning",
-        "Men and women are limited not by the place of their birth, not by the color of their skin, but by the size of their hope. ~ John Johnson",
-        "Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all. ~ Dale Carnegie",
-        "My great hope is to laugh as much as I cry; to get my work done and try to love somebody and have the courage to accept the love in return. ~ Maya Angelou",
-        "My theory has always been, that if we are to dream, the flatteries of hope are as cheap, and pleasanter, than the gloom of despair. ~ Thomas Jefferson",
-        "Nature has fixed no limits on our hopes. ~ Björk",
-        "Never deprive someone of hope; it might be all they have. ~ H Jackson Brown Jr",
-        "Never let go of hope - dream, take action, and get that transfer to live the life you wish. ~ Catherine Pulsifer",
-        "Never lose hope. Storms make people stronger and never last forever. ~ Roy T. Bennett (The Light in the Heart)",
-        "Never talk defeat. Use words like hope, belief, faith, victory. ~ Norman Vincent Peale",
-        "No matter how difficult life can be the most important thing is to live it with hope. ~ Author Unknown",
-        "No matter what kind of difficult situation one may find oneself in, some opening, some opportunity to fight one's way out, can always be found. What's most important is to hold fast to Hope, to face the future with courage. ~ Daisaku Ikeda",
-        "None who have always been free can understand the terrible fascinating power of the hope of freedom to those who are not free ~ Pearl S. Buck",
-        "Nothing worth doing is completed in our lifetime; therefore we must be saved by hope. Nothing true or beautiful makes complete sense in any immediate context of history; therefore we must be saved by faith. Nothing we do, however virtuous, can be accomplished alone; therefore, we are saved by love. ~ Reinhold Niebuhr",
-        "Now the God of hope fills you with all joy and peace in believing, that ye may abound in hope. ~ Bible",
-        "Of all ills that one endures, hope is a cheap and universal cure. ~ Abraham Cowley",
-        "Of all the forces that make for a better world, none is so indispensable, none so powerful, as hope. Without hope people are only half alive. With hope they dream and think and work. ~ Charles Sawyer",
-        "Oft hope is born when all is forlorn. ~ J. R. R. Tolkein (The Return of the King)",
-        "Oh, what a valiant faculty is hope. ~ Michel de Montaigne",
-        "Once you choose hope, anything's possible. ~ Christopher Reeve",
-        "One of the best safeguards of our hopes, I have suggested, is to be able to mark off the areas of hopelessness and to acknowledge them, to face them directly, not with despair but with the creative intent of keeping them from polluting all the areas of possibility. ~ William F. Lynch",
-        "One of the finest lessons nature can teach us is that of hope. She shows us hope realized with every bud that blossoms and every bird that learns to fly. ~ Author unknown",
-        "One of the most hopeful signs of today is the renewal of thinking about hope. ~ Leon Putman",
-        "Optimism is the faith that leads to achievement.  Nothing can be done without hope and confidence. ~ Helen Keller",
-        "Our children are our only hope for the future, but we are their only hope for their present and their future. ~ Zig Ziglar",
-        "Our greatest good, and what we least can spare, is hope. ~ John Armstrong",
-        "Our hopes are but memories reversed. ~ Author Unknown",
-        "Our hopes, desires and ambitions are powerful forces existing within us for the shaping of the future. They are the generating forces that create the future. ~ Daisaku Ikeda",
-        "Our human compassion binds us the one to the other – not in pity or patronizingly, but as human beings who have learnt how to turn our common suffering into hope for the future. ~ Nelson Mandela",
-        "Our imagination is the only limit to what we can hope to have in the future. ~ Charles Franklin Kettering",
-        "Patience is the art of hoping. ~ Vauvenargues",
-        "Patience with others is Love, Patience with self is Hope, Patience with God is Faith. ~ Adel Bestavros",
-        "People who build hope into their own lives and who share hope with others become powerful people. ~ Zig Ziglar ",
-        "Practice hope. As hopefulness becomes a habit, you can achieve a permanently happy spirit. ~ Norman Vincent Peale",
-        "Sometimes you need to hang on to someone else's hope, someone else's peace and sanity while yours is under siege. Do it. Courage, hope, faith, sanity, peace... they all come and go. Borrow them from someone else's supply until your own comes back in. ~ Linda Mundy",
-        "Strong hope is a much greater stimulant to life than any single realized joy could be. ~ Friedrich Nietzsche",
-        "Ten thousand men possess ten thousand hopes. ~ Euripides",
-        "The best way not to feel hopeless is to get up and do something. Don't wait for good things to happen to you. If you go out and make some good things happen, you will fill the world with hope, you will fill yourself with hope. ~ Barack Obama",
-        "The capacity for hope is the most significant fact of life. It provides human beings with a sense of destination and the energy to get started. ~ Norman Cousins",
-        "The central struggle of parenthood is to let our hopes for our children outweigh our fears. ~ Ellen Goodman",
-        "The first task of a leader is to keep hope alive. ~ Joe Batten",
-        "The free expression of the hopes and aspirations of a people is the greatest and only safety in a sane society. ~ Emma Goldman",
-        "The future belongs to those who give the next generation reason for hope. ~ Pierre Teilhard de Chardin",
-        "The gift we can offer others is so simple a thing as hope. ~ Daniel Berrigan",
-        "The greatest joys are found not only in what we do and feel, but also in what we hope for. ~ Bryant H. McGill",
-        "The hope or climbing aspiration of a divine child is to receive and achieve Peace, Light and Bliss in infinite measure. ~ Sri Chinmoy",
-        "The hopeful man sees success where others see failure, sunshine where others see shadows and storm. ~ Orison Swett Marden",
-        "The human body experiences a powerful gravitational pull in the direction of hope. That is why the patient's hopes are the physician's secret weapon. They are the hidden ingredients in any prescription. ~ Norman Cousins",
-        "The natural flights of the human mind are not from pleasure to pleasure but from hope to hope. ~ Samuel Johnson",
-        "The past is a source of knowledge, and the future is a source of hope. ~ Stephen Ambrose",
-        "The phoenix hope, can wing her way through the desert skies, and still defying fortune's spite; revive from ashes and rise. ~ Miguel De Cervantes",
-        "The power of growth, of improvement, the power to overcome all stagnation and break through every obstacle and transform a barren wasteland into a verdant field - that unstoppable power of hope resides right within your own heart. It wells up from the rich earth of your innermost being when you face the future without doubt or fear: 'I can do more. I can grow. I can become a bigger and better human being.' ~ Daisaku Ikeda",
-        "The present is the ever moving shadow that divides yesterday from tomorrow. In that lies hope. ~ Frank Lloyd Wright",
-        "The very least you can do in your life is to figure out what you hope for. And the most you can do is live inside that hope. Not admire it from a distance but live right in it, under its roof. ~ Barbara Kingsolver",
-        "There are three things I was born with in this world, and there are three things I will have until the day I die – hope, determination, and song. ~ Miriam Makeba",
-        "There is a saying in Tibetan, 'Tragedy should be utilized as a source of strength.'",
-        "No matter what sort of difficulties, how painful experience is, if we lose our hope, that's our real disaster. ~ Dalai Lama XIV",
-        "There is no hope unmingled with fear, and no fear unmingled with hope. ~ Baruch Spinoza",
-        "There is no medicine like hope, no incentive so great, and no tonic so powerful as expectation of something tomorrow. ~ Orison Swett Marden",
-        "There was never a night or a problem that could defeat sunrise or hope. ~ Bernard Williams",
-        "They say a person needs just three things to be truly happy in this world: someone to love, something to do, and something to hope for. ~ Tom Bodett",
-        "Though you are disappointed is hope; never let hope fail you! Though one door is shut, there are thousands still open to you. ~ Ruckett",
-        "Three grand essentials to happiness in this life are something to do, something to love, and something to hope for. ~ Joseph Addison",
-        "Through the centuries, we faced down death by daring to hope. ~ Maya Angelou",
-        "To hope is to feel the presence of the inner sun. The inner sun is; the outer sun becomes. ~ Sri Chinmoy",
-        "To hope is to see with the eye of the heart. ~ Sri Chinmoy",
-        "To hope is to send darkest night into exile. ~ Sri Chinmoy",
-        "To hope means to be ready at every moment for that which is not yet born, and yet not become desperate if there is no birth in our lifetime … those whose hope is strong see and cherish all signs of new life and are ready every moment to help the birth of that which is ready to be born. ~ Erich Fromm",
-        <p>
-          "To hope, then, means to take a playful leap" "into the future—to dare
-          to spring from firm ground—" "to play trustingly—invest energy,
-          laughter;" "And one good leap encourages another—" "On then with the
-          dance. ~ Joan M. Erikson
-        </p>,
-        "To possess an undaunting Hope: Believe that in the midst of confusion and bewilderment, one is capable of seeking and holding onto the way toward a future possessing insight and vision. ~'Ike Pono 'Oe",
-        "True hope dwells on the possible, even when life seems to be a plot written by someone who wants to see how much adversity we can overcome. ~ Walter Anderson",
-        "True hope is swift, and flies with swallow's wings; Kings it makes gods, and meaner creatures kings. ~ Shakespeare",
-        "Walk on with hope in your heart, and you'll never walk alone. ~ Shah Rukh Khan",
-        "We have always held to the hope, the belief, the conviction that there is a better life, a better world, beyond the horizon. ~ Franklin D. Roosevelt",
-        "We judge of man's wisdom by his hope. ~ Ralph Waldo Emerson",
-        "We live by admiration, hope and love. ~ William Wordsworth",
-        "We must accept finite disappointment, but we must never lose infinite hope. ~ Dr. Martin Luther King Jr.",
-        "We need never be hopeless because we can never be irreparably broken. ~ John Green (Looking for Alaska)",
-        "We should not let our fears hold us back from pursuing our hopes. ~ John F. Kennedy",
-        "We want to create hope for the person ... we must give hope, always hope. ~ Mother Teresa",
-        "We've been warned against offering the people of this nation false hope. But in the unlikely story that is America, there has never been anything false about hope. ~ Barack Obama",
-        "What is true of the individual will be tomorrow true of the whole nation if individuals will but refuse to lose heart and hope. ~ Mahatma Gandhi",
-        "When the world says, 'Give up', Hope whispers, 'Try it one more time'. ~ Author Unknown",
-        "When we feel defeated, we need only take a deep breath and say, 'Yes,' and hope will reappear ~ Monroe Forester",
-        "When we live with hope we do not get tangled up with concerns for how our wishes will be fulfilled. (…) Hope includes an openness by which you wait for the promise to come through, even though you never know when, where, or how this might happen. ~ Henri Nouwen",
-        "When you're at the end of your rope, tie a knot and hold on. ~ Theodore Roosevelt",
-        "When you do nothing, you feel overwhelmed and powerless. But when you get involved, you feel the sense of hope and accomplishment that comes from knowing you are working to make things better. ~ Pauline R. Kezer",
-        "Where some see despair, others see hope. Hope then, like beauty, is in the eye of the beholder. ~ Wendy Edey",
-        "Where there is creativity, there is hope. ~ Donna Karan",
-        "Where there is no hope, it is incumbent on us to invent it. ~ Albert Camus",
-        <p>
-          "Whether we be young or old,", "Our destiny, our being's heart and
-          home,", "Is with infinitude, and only there;", "With hope it is, hope
-          that can never die,", "Effort and expectation, and desire,", "And
-          something evermore about to be. ~ William Wordsworth",
-        </p>,
-        "While there's life, there's hope. ~ Cicero",
-        "",
-        "You are here in order to enable the world to live more amply, with greater vision, with a finer spirit of hope and achievement. ~ Woodrow Wilson",
-        "You may not always have a comfortable life and you will not always be able to solve all of the world’s problems at once but don’t ever underestimate the importance you can have because history has shown us that courage can be contagious and hope can take on a life of its own. ~ Michelle Obama",
-        "Your hopes, dreams and aspirations are legitimate. They are trying to take you airborne, above the clouds, above the storms, if you only let them. ~ William James",
-        <p>
-          "Tonight, I send you hope.", "May it be the lens of your life’s
-          vision,", "may it always help awaken your passion,", "may it help
-          ignite your convictions,", "may you be a stubborn, indefatigable hero
-          of hope - hope’s champion.", "And when dark doubts surge, may you be
-          hope’s harbor –", "A caretaker and defender of hope. ~ Senator Corey
-          Booker",
-        </p>,
-        "I have never quite understood what false hope is. All hope is 'false' in the sense that what is hoped for may not materialize. At the time of hoping one cannot know the outcome. If the hope serves to improve one's quality of life and does not cause one to avoid taking adaptive action when it is possible, nor be resentful when the hoped-for outcome does not materialize, then it is obviously desirable. ~ A. H. Epstein, 1989, p. xxv",
+        {
+          quote:
+            "A ship ought not to be held by one anchor, nor life by a single hope.",
+          author: "Epictetus",
+        },
+        {
+          quote:
+            "A strange thing is memory, and hope; one looks backward, and the other forward; one is of today, the other of tomorrow.",
+          author: "Anna Mary Robertson ('Grandma') Moses",
+        },
+        {
+          quote: "All human wisdom is summed up in two words – wait and hope.",
+          author: "Alexandre Dumas",
+        },
+        {
+          quote:
+            "All it takes is one bloom of hope to make a spiritual garden.",
+          author: "Terri Guillemets",
+        },
+        {
+          quote:
+            "All kids need is a little help, a little hope and somebody who believes in them.",
+          author: "Magic Johnson",
+        },
+        {
+          quote:
+            "All the great spiritual leaders in history were people of hope. Abraham, Moses, Ruth, Mary, Jesus, Rumi, Gandhi, and Dorothy Day all lived with a promise in their hearts that guided them toward the future without the need to know exactly what it would look like. Let's live with hope.",
+          author: "Henri Nouwen",
+        },
+        {
+          quote:
+            "As great scientists have said and as all children know, it is above all by the imagination that we achieve perception, and compassion, and hope.",
+          author: "Ursula K. LeGuin",
+        },
+        {
+          quote:
+            "As I see it, in everything that we do, we need to come down on the side of life and hope.",
+          author: "F. Tustin",
+        },
+        {
+          quote:
+            "Believe in the incredible power of the human mind. Of doing something that makes a difference. Of working hard. Of laughing and hoping.",
+          author: "Dream Big",
+        },
+        {
+          quote:
+            "But groundless hope, like unconditional love, is the only kind worth having.",
+          author: "John Perry Barlow",
+        },
+        {
+          quote:
+            "But I know, somehow, that only when it is dark enough can you see the stars.",
+          author: "Martin Luther King Jr.",
+        },
+        {
+          quote:
+            "But keep on working and hoping still. For in spite of the grumblers who stand about, somehow, it seems, all things work out.",
+          author: "Edgar Guest",
+        },
+        {
+          quote:
+            "Change has a considerable psychological impact on the human mind. To the fearful it is threatening because it means that things may get worse. To the hopeful it is encouraging because things may get better.",
+          author: "Whitney Jr",
+        },
+        {
+          quote:
+            "Consult not your fears but your hopes and dreams, think not about your frustrations, but about your unfulfilled potential. Concern yourself not with what you tried and failed in, but with what is still possible for you to do.",
+          author: "Pope John XXIII",
+        },
+        {
+          quote: "Courage is like love; it must have hope for nourishment.",
+          author: "Napoleon I",
+        },
+        {
+          quote:
+            "Do not spoil what you have by desiring what you have not; but remember that what you now have was once among the things you only hoped for.",
+          author: "Epicurus",
+        },
+        {
+          quote:
+            "Each of us has the power to give life meaning, to make our time and our bodies and our words into instruments of love and hope.",
+          author: "Tom Head",
+        },
+        {
+          quote:
+            "Each time a person stands up for an ideal, or acts to improve the lot of others, or strikes out against injustice, he sends forth a tiny ripple of hope, and crossing each other from a million different centers of energy and daring, these ripples build a current that can sweep down the mightiest walls of oppression and resistance.",
+          author: "Robert F. Kennedy",
+        },
+        {
+          quote:
+            "Enthusiasm is the yeast that makes your hopes rise to the stars.",
+          author: "Henry Tor",
+        },
+        {
+          quote:
+            "Every area of trouble gives out a ray of hope; and the one unchangeable certainty is that nothing is certain or unchangeable.",
+          author: "John Fitzgerald Kennedy",
+        },
+        {
+          quote:
+            "Every parent is at some time the father of the unreturned prodigal, with nothing to do but keep his house open to hope.",
+          author: "John Ciardi",
+        },
+        {
+          quote:
+            "Every time you stand up for an ideal, you send forth a tiny ripple of hope.",
+          author: "Robert Kennedy",
+        },
+        {
+          quote: "Everything that is done in the world is done by hope.",
+          author: "Dr. Martin Luther King Jr.",
+        },
+        {
+          quote:
+            "Expect to have hope rekindled. Expect your prayers to be answered in wondrous ways. The dry seasons in life do not last. The spring rains will come again.",
+          author: "Sarah Ban Breathnach",
+        },
+        {
+          quote: "Extreme hopes are born of extreme misery.",
+          author: "Bertrand Russell",
+        },
+        {
+          quote:
+            "Faith goes up the stairs that love has built and looks out the window which hope has opened.",
+          author: "Charles Spurgeon",
+        },
+        {
+          quote:
+            "Faith walks simply, childlike, between the darkness of human life and the hope of what is to come.",
+          author: "Catherine de Hueck Doherty",
+        },
+        {
+          quote: "Fear can hold you prisoner. Hope can set you free.",
+          author: "Stephen King (The Shawshank Redemption)",
+        },
+        {
+          quote:
+            "Fear less, hope more; eat less, chew more; whine less, breathe more; talk less, say more; hate less, love more; and all good things are yours.",
+          author: "Swedish proverb",
+        },
+        {
+          quote:
+            "For like a shaft, clear and cold, the thought pierced him that in the end the Shadow was only a small and passing thing: there was light and high beauty for ever beyond its reach.",
+          author: "J. R. R. Tolkien (The Return of the King)",
+        },
+        {
+          quote:
+            "Forgiving means to pardon the unpardonable, Faith means believing the unbelievable, And hoping means to hope when things are hopeless.",
+          author: "G. K. Chesterton",
+        },
+        { quote: "Great hopes make great men.", author: "Thomas Fuller" },
+        {
+          quote:
+            "Have hope. Though clouds environs now, And gladness hides her face in scorn, Put thou the shadow from thy brow - No night but hath its morn.",
+          author: "J. C. F. von Schiller",
+        },
+        {
+          quote: "He that lives in hope danceth without musick.",
+          author: "George Herbert",
+        },
+        {
+          quote: "He who does not hope to win has already lost.",
+          author: "Jose' Joaquin Olmedo",
+        },
+        {
+          quote:
+            "He who has health has hope; and he who has hope has everything.",
+          author: "Arabian Proverb",
+        },
+        {
+          quote:
+            "Hold your head high, stick your chest out. You can make it. It gets dark sometimes, but morning comes. Keep hope alive.",
+          author: "Jesse Jackson",
+        },
+        {
+          quote: "Hope ... is not a feeling; it is something you do.",
+          author: "Katherine Paterson",
+        },
+        {
+          quote:
+            "Hope and faith are two intimate brothers; they always go together. Hope nourishes faith and faith treasures hope.",
+          author: "Sri Chinmoy",
+        },
+        { quote: "Hope and fear are inseparable.", author: "La Rochefoucauld" },
+        {
+          quote:
+            "Hope and patience are two sovereign remedies for all, the surest reposals, the softest cushions to lean on in adversity.",
+          author: "Robert Burton",
+        },
+        {
+          quote:
+            "Hope arouses, as nothing else can arouse, a passion for the possible.",
+          author: "William Sloan Coffin",
+        },
+        {
+          quote:
+            "Hope begins in the dark, the stubborn hope that if you just show up and try to do the right thing, the dawn will come. You wait and watch and work: You don't give up.",
+          author: "Anne Lamott",
+        },
+        {
+          quote:
+            "Hope can be a powerful force. Maybe there’s no actual magic in it, but when you know what you hope for most and hold it like a light within you, you can make things happen, almost like magic.",
+          author: "Laini Taylor",
+        },
+        {
+          quote:
+            "Hope changes everything. It changes winter into summer, darkness into dawn, descent into ascent, barrenness into creativity, agony into joy.",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote: "Hope cherishes no illusions, nor does it yield to cynicism.",
+          author: "Father James Keller",
+        },
+        {
+          quote:
+            "Hope dies last. (Or Hope is the last thing to be lost) (Lo ultimo que muere es la esperanza)",
+          author: "Spanish proverb",
+        },
+        {
+          quote:
+            "Hope discovers what can be done instead of grumbling about what cannot.",
+          author: "Father James Keller",
+        },
+        {
+          quote:
+            "Hope doesn't come from calculating whether the good news is winning out over the bad. It's simply a choice to take action.",
+          author: "Anna Lappe",
+        },
+        {
+          quote: "Hope has as many lives as a cat or a king.",
+          author: "Henry Wadsworth Longfellow",
+        },
+        {
+          quote:
+            "Hope is a belief in a positive outcome related to events and circumstances in one's life. Hope is the feeling that what is wanted can be had or that events will turn out for the best.",
+          author: "Wikipedia",
+        },
+        {
+          quote:
+            "Hope is a good thing – maybe the best thing, and no good thing ever dies.",
+          author: "Stephen King (The Shawshank Redemption)",
+        },
+        {
+          quote: "Hope is a light we keep inside that no one can touch.",
+          author: "Jermaine J. Evans",
+        },
+        {
+          quote:
+            "Hope is a renewable option: If you run out of it at the end of the day, you get to start over in the morning.",
+          author: "Barbara Kingsolver",
+        },
+        {
+          quote: "Hope is a risk that must be run.",
+          author: "Georges Bernanos",
+        },
+        {
+          quote:
+            "Hope is a satisfaction unto itself, and need not be fulfilled to be appreciated.",
+          author: "Dr. Fred O. Henker",
+        },
+        { quote: "Hope is a song in a weary throat.", author: "Pauli Murray" },
+        {
+          quote:
+            "Hope is a state of mind, not of the world. Hope, in this deep and powerful sense, is not the same as joy that things are going well, or willingness to invest in enterprises that are obviously heading for success, but rather an ability to work for something because it is good.",
+          author: "Vaclav Havel",
+        },
+        { quote: "Hope is a talent like any other.", author: "Storm Jameson" },
+        {
+          quote:
+            "Hope is a vigorous principle ... it sets the head and heart to work, and animates a man to do his utmost.",
+          author: "Jeremy Collier",
+        },
+        { quote: "Hope is a waking dream.", author: "Aristotle" },
+        {
+          quote:
+            "Hope is always available to us. When we feel defeated, we need only take a deep breath and say, Yes, and hope will reappear.",
+          author: "Monroe Forester",
+        },
+        {
+          quote:
+            "Hope is an adventure, a going forward, a confident search for a rewarding life.",
+          author: "Dr. Karl Menninger",
+        },
+        {
+          quote: "Hope is an essential constituent of human life.",
+          author: "Benjamin Franklin",
+        },
+        {
+          quote:
+            "Hope is being able to see that there is light despite all of the darkness.",
+          author: "Desmond Tutu",
+        },
+        {
+          quote:
+            "Hope is both the earliest and the most indispensable virtue inherent in the state of being alive. If life is to be sustained hope must remain, even where confidence is wounded, trust impaired.",
+          author: "Erik H. Erikson",
+        },
+        {
+          quote: "Hope is brightest when it dawns from fears.",
+          author: "Sir Walter Scott",
+        },
+        {
+          quote: "Hope is desire and expectation rolled into one.",
+          author: "Ambrose Bierce",
+        },
+        {
+          quote: "Hope is faith holding out its hand in the dark.",
+          author: "George Iles",
+        },
+        {
+          quote:
+            "Hope is important because it can make the present moment less difficult to bear. If we believe that tomorrow will be better, we can bear a hardship today.",
+          author: "Thich Nhat Hanh",
+        },
+        {
+          quote:
+            "Hope is itself a species of happiness and, perhaps, the chief happiness which this world affords.",
+          author: "Samuel Johnson",
+        },
+        { quote: "Hope is life's greatest treasure.", author: "Daisaku Ikeda" },
+        {
+          quote:
+            "Hope is like a road in the country; there was never a road, but when many people walk on it, the road comes into existence.",
+          author: "Lin Yutang",
+        },
+        {
+          quote:
+            "Hope is like the sun, which, as we journey towards it, casts the shadow of our burden behind us.",
+          author: "Samuel Smiles",
+        },
+        {
+          quote: "Hope is love's happiness, but not its life.",
+          author: "Letitia E. Landon",
+        },
+        { quote: "Hope is man's inner effort.", author: "Sri Chinmoy" },
+        {
+          quote: "Hope is man's preparation for the unknown.",
+          author: "Sri Chinmoy",
+        },
+        {
+          quote: "Hope is medicine for a soul that's sick and tired.",
+          author: "Eric Swensson",
+        },
+        {
+          quote:
+            "Hope is necessary in every condition. The miseries of poverty, sickness, of captivity, would, without this comfort, be insupportable.",
+          author: "Samuel Johnson",
+        },
+        {
+          quote:
+            "Hope is not a dream, but a way of making dreams become reality.",
+          author: "L. J. Cardinal Suenens",
+        },
+        {
+          quote:
+            "Hope is not a granted wish or a favor performed; no it is far greater than that. It is a zany, unpredictable dependence on a God who loves to surprise us out of our socks.",
+          author: "Max Lucado",
+        },
+        {
+          quote:
+            "Hope is not a matter of waiting for things outside of us to get better. It is about getting better inside about what is going on outside.",
+          author: "Joan Chittister",
+        },
+        {
+          quote:
+            "Hope is not blind optimism. It's not ignoring the enormity of the task ahead, or the roadblocks that stand in our path. It's not sitting on the sidelines or shirking from a fight. Hope is that thing inside us that insists, despite all the evidence to the contrary, that something better awaits us if we have the courage to reach for it, work for it, and fight for it.",
+          author: "Barack Obama",
+        },
+        {
+          quote:
+            "Hope is not the conviction that something will turn out well but the certainty that something makes sense, regardless of how it turns out.",
+          author: "Vaclav Havel",
+        },
+        {
+          quote:
+            "Hope is one of the principal springs that keep mankind in motion.",
+          author: "Thomas Fuller",
+        },
+        {
+          quote: "Hope is one of those things in life you cannot do without.",
+          author: "LeRoy Douglas",
+        },
+        {
+          quote: "Hope is only the love of life.",
+          author: "Henri Frederic Amiel",
+        },
+        {
+          quote:
+            "Hope is outreaching desire with expectancy of good. It is a characteristic of all living beings.",
+          author: "Edward S. Ame",
+        },
+        { quote: "Hope is patience with the lamp lit.", author: "Tertullian" },
+        {
+          quote: "Hope is putting faith to work when doubting would be easier.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "Hope is some extraordinary spiritual grace that God gives us to control our fears, not to oust them.",
+          author: "Vincent McNabb",
+        },
+        { quote: "Hope is the 'yes' to life.", author: "Dr. Ronna Jevne" },
+        {
+          quote:
+            "Hope is the anchor of the soul, the stimulus to action, and the incentive to achievement.",
+          author: "Anonymous",
+        },
+        {
+          quote: "Hope is the belief, more or less strong, that joy will come.",
+          author: "Sydney Smith",
+        },
+        { quote: "Hope is the best possession.", author: "William Hazlitt" },
+        {
+          quote:
+            "Hope is the companion of power, and mother of success; for who so hopes strongly has within him the gift of miracles.",
+          author: "Samuel Smiles",
+        },
+        {
+          quote: "Hope is the dream of a soul awake.",
+          author: "French Proverb",
+        },
+        {
+          quote:
+            "Hope is the feeling that life and work have a meaning. You either have it or you don't, regardless of the state of world that surrounds you.",
+          author: "Vaclav Havel",
+        },
+        {
+          quote:
+            "Hope is the feeling you have that the feeling you have isn't permanent.",
+          author: "Jean Kerr",
+        },
+        {
+          quote: "Hope is the first thing to take some sort of action.",
+          author: "John Armstrong",
+        },
+        {
+          quote: "Hope is the mainspring of life.",
+          author: "Henry L. Stimson",
+        },
+        {
+          quote: "Hope is the only bee that makes honey without flowers.",
+          author: "Robert Ingersoll",
+        },
+        { quote: "Hope is the parent of faith.", author: "C. A. Bartol" },
+        {
+          quote: "Hope is the physician of each misery.",
+          author: "Irish Proverb",
+        },
+        {
+          quote: "Hope is the pillar that holds up the world.",
+          author: "Pliny the Elder",
+        },
+        {
+          quote: "Hope is the positive mode of awaiting the future.",
+          author: "Emil Brunner",
+        },
+        {
+          quote:
+            "Hope is the power of being cheerful in circumstances which we know to be desperate.",
+          author: "G. K. Chesterton",
+        },
+        {
+          quote:
+            "Hope is the sun. It is light. It is passion. It is the fundamental force for life's blossoming.",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote:
+            "Hope is the thing with feathers, that perches in the soul, and sings the tune without words, and never stops at all.",
+          author: "Emily Dickinson",
+        },
+        {
+          quote:
+            "Hope is the word which God has written on the brow of every man.",
+          author: "Victor Hugo",
+        },
+        {
+          quote:
+            "Hope lies in dreams, in imagination, and in the courage of those who dare to make dreams into reality.",
+          author: "Jonas Salk",
+        },
+        {
+          quote: "Hope lights a candle instead of cursing the darkness.",
+          author: "Father James Keller",
+        },
+        {
+          quote:
+            "Hope means believing in spite of the evidence, and then watching the evidence change.",
+          author: "Jim Wallis",
+        },
+        {
+          quote: "Hope opens doors where despair closes them.",
+          author: "Father James Keller",
+        },
+        {
+          quote:
+            "Hope plays an integral part in knowing - knowing myself, knowing others.",
+          author: "Casey Boodt",
+        },
+        {
+          quote:
+            "Hope puts up with modest gains, realizing that the longest journey starts with one step.",
+          author: "Father James Keller",
+        },
+        {
+          quote: "Hope regards problems, small or large, as opportunities.",
+          author: "Father James Keller",
+        },
+        {
+          quote:
+            "Hope sees the invisible, feels the intangible and achieves the impossible.",
+          author: "Charles Caleb Colton",
+        },
+        {
+          quote:
+            "Hope smiles from the threshold of the year to come, whispering, 'It will be happier.' ",
+          author: "Alfred Lord Tennyson",
+        },
+        {
+          quote: "Hope springs eternal in the human breast.",
+          author: "Alexander Pope",
+        },
+        {
+          quote: "Hope transforms pessimism into optimism. Hope is invincible.",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote:
+            "Hope unbelieved is always considered nonsense. But hope believed is history in the process of being changed.",
+          author: "Jim Wallis",
+        },
+        { quote: "Hope will never be silent.", author: "Harvey Milk" },
+        {
+          quote: (
+            <p>
+              Hope, like the gleaming taper's light Adorns and cheers our way;
+              And still, as darker grows the night, Emits a brighter ray.{" "}
+            </p>
+          ),
+          author: "Oliver Goldsmith",
+        },
+        {
+          quote: "Hope, that star of life's tremulous ocean.",
+          author: "Paul Moon James",
+        },
+        {
+          quote:
+            "Hopeful thinking can get you out of your fear zone and into your appreciation zone.",
+          author: "Martha Beck",
+        },
+        {
+          quote:
+            "Hopes, dreams, faith and a sense of mission enable us to open up our lives.",
+          author: "Daisaku Ikeda",
+        },
+        { quote: "I always entertain great hopes.", author: "Robert Frost" },
+        {
+          quote:
+            "I am not an optimist, because I am not sure that everything ends well. Nor am I a pessimist, because I am not sure that everything ends badly. I just carry hope in my heart.",
+          author: "Vaclav Havel",
+        },
+        {
+          quote:
+            "I believe that imagination is stronger than knowledge. That myth is more potent than history.  That dreams are more powerful than facts. That hope always triumphs over experience. That laughter is the only cure for grief. And I believe that love is stronger than death.",
+          author: "Robert Fulghum",
+        },
+        {
+          quote:
+            "I cannot imagine that I could strive for something if I did not carry hope in me.",
+          author: "Vaclav Havel",
+        },
+        {
+          quote:
+            "I claim to be an average man of less than average ability. I have not the shadow of a doubt that any man or woman can achieve what I have, if he or she would make the same effort and cultivate the same hope and faith.",
+          author: "Mahatma Gandhi",
+        },
+        {
+          quote:
+            "I know that you cannot live on hope alone, but without it, life is not worth living. And you, and you, and you, and you have got to give them hope.",
+          author: "Harvey Milk",
+        },
+        {
+          quote:
+            "I know the world is filled with troubles and many injustices. But reality is as beautiful as it is ugly. I think it is just as important to sing about beautiful mornings as it is to talk about slums. I just couldn't write anything without hope in it.",
+          author: "Oscar Hammerstein",
+        },
+        {
+          quote:
+            "I steer my bark with hope in the head, leaving fear astern. My hopes indeed sometimes fail, but not oftener than the forebodings of the gloomy.",
+          author: "Thomas Jefferson",
+        },
+        {
+          quote:
+            "If at first, the idea is not absurd, then there is no hope for it.",
+          author: "Albert Einstein",
+        },
+        {
+          quote:
+            "If children have the ability to ignore all odds and percentages, then maybe we can all learn from them. When you think about it, what other choice is there but to hope? We have two options, medically and emotionally: give up, or fight like hell.",
+          author: "Lance Armstrong",
+        },
+        {
+          quote: "If it were not for hopes, the heart would break.",
+          author: "Thomas Fuller",
+        },
+        {
+          quote:
+            "If there is a reason to be hopeful, be hopeful.  It doesn't jinx anything.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "If we were logical, the future would be bleak indeed. But we are more than logical. We are human beings, and we have faith, and we have hope.",
+          author: "Jacques Cousteau",
+        },
+        {
+          quote:
+            "If you do not hope, you will not find what is beyond your hopes.",
+          author: "St. Clement of Alexandria",
+        },
+        {
+          quote:
+            "If you lose hope, somehow you lose the vitality that keeps life moving, you lose that courage to be, that quality that helps you go on in spite of it all. And so today I still have a dream.",
+          author: "Martin Luther King, Jr. ",
+        },
+        {
+          quote:
+            "If you wish to succeed in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother, and hope your guardian genius.",
+          author: "Joseph Addison",
+        },
+        {
+          quote:
+            "In a world filled with hate, we must still dare to hope. In a world filled with anger, we must still dare to comfort. In a world filled with despair, we must still dare to dream. And in a world filled with distrust, we must still dare to believe.",
+          author: "Michael Jackson",
+        },
+        {
+          quote: "In all pleasures hope is a considerable part.",
+          author: "Samuel Johnson",
+        },
+        {
+          quote: "In all things it is better to hope than to despair.",
+          author: "Johann Wolfgang von Goethe",
+        },
+        {
+          quote:
+            "In fact, hope is best gained after defeat and failure, because then inner strength and toughness is produced.",
+          author: "Fritz Napp",
+        },
+        {
+          quote:
+            "In our lives, where there is hope, the impossible moves within our grasp, and what seems difficult to reach waits but a breath away.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "In the face of uncertainty, there is nothing wrong with hope.",
+          author: "Bernie S. Siegel",
+        },
+        {
+          quote:
+            "In the final analysis, the hope of every person is simply peace of mind.",
+          author: "Dalai Lama",
+        },
+        {
+          quote:
+            "In the night of death, hope sees a star, and listening love can hear the rustle of a wing.",
+          author: "Robert G. Ingersoll",
+        },
+        {
+          quote:
+            "In this life, anything can happen - and what can help bring it to pass is Hope.",
+          author: "Claude M. Bristol",
+        },
+        {
+          quote:
+            "In time of trouble avert not thy face from hope, for the soft marrow abideth in the hard bone.",
+          author: "Hafez",
+        },
+        {
+          quote:
+            "Isn't it the moment of most profound doubt that gives birth to new certainties? Perhaps hopelessness is the very soil that nourishes human hope; perhaps one could never find sense in life without first experiencing its absurdity.",
+          author: "Vaclav Havel",
+        },
+        {
+          quote:
+            "It has never been, and never will be, easy work! But the road that is built in hope is more pleasant to the traveler than the road built in despair, even though they both lead to the same destination.",
+          author: "Marion Zimmer Bradley",
+        },
+        {
+          quote:
+            "It is a fact of life that we find ourselves in unpleasant demoralizing situations which we can neither escape nor control. We can keep our morale and spirits high by using both coping and hoping humor. Coping humor laughs at the hopelessness in our situation. It gives us the courage to hang in there, but it does not bring hope. The uniqueness of hoping humor lies in its acceptance of life with all its dichotomies, contradictions, and incongruities. It celebrates the hope in human life. From one comes courage, from the other comes inspiration.",
+          author: "Cy Eberhart",
+        },
+        {
+          quote:
+            "It is above all by the imagination that we achieve perception and compassion and hope.",
+          author: "Ursula LeGuin",
+        },
+        {
+          quote: "It is characteristic of genius to be hopeful and aspiring.",
+          author: "Harriet Martineau",
+        },
+        {
+          quote:
+            "It is difficult to say what is impossible, for the dream of yesterday is the hope of today and the reality of tomorrow.",
+          author: "Robert H Goddard",
+        },
+        {
+          quote: "It is history that teaches us to hope.",
+          author: "Robert E. Lee",
+        },
+        {
+          quote:
+            "It is important for me to share my experiences in order to create strength and hope for others. No matter how far down you go, it is never too late to come back.",
+          author: "Theo Fleury",
+        },
+        {
+          quote:
+            "It is learning, individually and collectively, which makes us strong, gives us hope, and carries us forward.",
+          author: "Barbara Viniar",
+        },
+        {
+          quote: "It's a lot better to hope than not to.",
+          author: "Benjamin J. Stein",
+        },
+        {
+          quote: "It's hope as a decision that makes change possible.",
+          author: "Jim Wallis",
+        },
+        {
+          quote: "It's the possibility that keeps me going, not the guarantee.",
+          author: "Nicholas Sparks (The Notebook)",
+        },
+        {
+          quote: (
+            <p>
+              Know then, whatever cheerful and serene Supports the mind,
+              supports the body too: Hence, the most vital movement mortals feel
+              Is hope, the balm and lifeblood of the soul.
+            </p>
+          ),
+          author: "John Armstrong",
+        },
+        {
+          quote: "A leader is a dealer in hope.",
+          author: "Napoleon Bonaparte",
+        },
+        {
+          quote: "Learn from yesterday, live for today, hope for tomorrow.",
+          author: "Albert Einstein",
+        },
+        {
+          quote: "Let your hopes, not your hurts, shape your future.",
+          author: "Robert H. Schuller",
+        },
+        {
+          quote:
+            "A life without hope is bleak and grey. If you have no hope, create some.",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote:
+            "Man can live about forty days without food, about three days without water, about eight minutes without air ... but only for one second without hope.",
+          author: "Hal Lindsey",
+        },
+        {
+          quote:
+            "Man is a creature of hope and invention, both of which belie the idea that things cannot be changed.",
+          author: "Tom Clancy",
+        },
+        {
+          quote:
+            "Man needs, for his happiness, not only the enjoyment of this or that, but hope and enterprise and change.",
+          author: "Bertrand Russell",
+        },
+        {
+          quote: "Man partly is and wholly hopes to be.",
+          author: "Robert Browning",
+        },
+        {
+          quote:
+            "Men and women are limited not by the place of their birth, not by the color of their skin, but by the size of their hope.",
+          author: "John Johnson",
+        },
+        {
+          quote:
+            "Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all.",
+          author: "Dale Carnegie",
+        },
+        {
+          quote:
+            "My great hope is to laugh as much as I cry; to get my work done and try to love somebody and have the courage to accept the love in return.",
+          author: "Maya Angelou",
+        },
+        {
+          quote:
+            "My theory has always been, that if we are to dream, the flatteries of hope are as cheap, and pleasanter, than the gloom of despair.",
+          author: "Thomas Jefferson",
+        },
+        { quote: "Nature has fixed no limits on our hopes.", author: "Björk" },
+        {
+          quote: "Never deprive someone of hope; it might be all they have.",
+          author: "H Jackson Brown Jr",
+        },
+        {
+          quote:
+            "Never let go of hope - dream, take action, and get that transfer to live the life you wish.",
+          author: "Catherine Pulsifer",
+        },
+        {
+          quote:
+            "Never lose hope. Storms make people stronger and never last forever.",
+          author: "Roy T. Bennett (The Light in the Heart)",
+        },
+        {
+          quote:
+            "Never talk defeat. Use words like hope, belief, faith, victory.",
+          author: "Norman Vincent Peale",
+        },
+        {
+          quote:
+            "No matter how difficult life can be the most important thing is to live it with hope.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "No matter what kind of difficult situation one may find oneself in, some opening, some opportunity to fight one's way out, can always be found. What's most important is to hold fast to Hope, to face the future with courage.",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote:
+            "None who have always been free can understand the terrible fascinating power of the hope of freedom to those who are not free.",
+          author: "Pearl S. Buck",
+        },
+        {
+          quote:
+            "Nothing worth doing is completed in our lifetime; therefore we must be saved by hope. Nothing true or beautiful makes complete sense in any immediate context of history; therefore we must be saved by faith. Nothing we do, however virtuous, can be accomplished alone; therefore, we are saved by love.",
+          author: "Reinhold Niebuhr",
+        },
+        {
+          quote:
+            "Now the God of hope fills you with all joy and peace in believing, that ye may abound in hope.",
+          author: "Bible",
+        },
+        {
+          quote:
+            "Of all ills that one endures, hope is a cheap and universal cure.",
+          author: "Abraham Cowley",
+        },
+        {
+          quote:
+            "Of all the forces that make for a better world, none is so indispensable, none so powerful, as hope. Without hope people are only half alive. With hope they dream and think and work.",
+          author: "Charles Sawyer",
+        },
+        {
+          quote: "Oft hope is born when all is forlorn.",
+          author: "J. R. R. Tolkein (The Return of the King) ",
+        },
+        {
+          quote: "Oh, what a valiant faculty is hope.",
+          author: "Michel de Montaigne",
+        },
+        {
+          quote: "Once you choose hope, anything's possible.",
+          author: "Christopher Reeve",
+        },
+        {
+          quote:
+            "One of the best safeguards of our hopes, I have suggested, is to be able to mark off the areas of hopelessness and to acknowledge them, to face them directly, not with despair but with the creative intent of keeping them from polluting all the areas of possibility.",
+          author: "William F. Lynch",
+        },
+        {
+          quote:
+            "One of the finest lessons nature can teach us is that of hope. She shows us hope realized with every bud that blossoms and every bird that learns to fly.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "One of the most hopeful signs of today is the renewal of thinking about hope.",
+          author: "Leon Putman",
+        },
+        {
+          quote:
+            "Optimism is the faith that leads to achievement.  Nothing can be done without hope and confidence.",
+          author: "Helen Keller",
+        },
+        {
+          quote:
+            "Our children are our only hope for the future, but we are their only hope for their present and their future.",
+          author: "Zig Ziglar",
+        },
+        {
+          quote: "Our greatest good, and what we least can spare, is hope.",
+          author: "John Armstrong",
+        },
+        {
+          quote: "Our hopes are but memories reversed.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "Our hopes, desires and ambitions are powerful forces existing within us for the shaping of the future. They are the generating forces that create the future.",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote:
+            "Our human compassion binds us the one to the other – not in pity or patronizingly, but as human beings who have learnt how to turn our common suffering into hope for the future.",
+          author: "Nelson Mandela",
+        },
+        {
+          quote:
+            "Our imagination is the only limit to what we can hope to have in the future.",
+          author: "Charles Franklin Kettering",
+        },
+        { quote: "Patience is the art of hoping.", author: "Vauvenargues" },
+        {
+          quote:
+            "Patience with others is Love, Patience with self is Hope, Patience with God is Faith.",
+          author: "Adel Bestavros",
+        },
+        {
+          quote:
+            "People who build hope into their own lives and who share hope with others become powerful people.",
+          author: "Zig Ziglar",
+        },
+        {
+          quote:
+            "Practice hope. As hopefulness becomes a habit, you can achieve a permanently happy spirit.",
+          author: "Norman Vincent Peale",
+        },
+        {
+          quote:
+            "Sometimes you need to hang on to someone else's hope, someone else's peace and sanity while yours is under siege. Do it. Courage, hope, faith, sanity, peace... they all come and go. Borrow them from someone else's supply until your own comes back in.",
+          author: "Linda Mundy",
+        },
+        {
+          quote:
+            "Strong hope is a much greater stimulant to life than any single realized joy could be.",
+          author: "Friedrich Nietzsche",
+        },
+        {
+          quote: "Ten thousand men possess ten thousand hopes.",
+          author: "Euripides",
+        },
+        {
+          quote:
+            "The best way not to feel hopeless is to get up and do something. Don't wait for good things to happen to you. If you go out and make some good things happen, you will fill the world with hope, you will fill yourself with hope.",
+          author: "Barack Obama",
+        },
+        {
+          quote:
+            "The capacity for hope is the most significant fact of life. It provides human beings with a sense of destination and the energy to get started.",
+          author: "Norman Cousins",
+        },
+        {
+          quote:
+            "The central struggle of parenthood is to let our hopes for our children outweigh our fears.",
+          author: "Ellen Goodman",
+        },
+        {
+          quote: "The first task of a leader is to keep hope alive.",
+          author: "Joe Batten",
+        },
+        {
+          quote:
+            "The free expression of the hopes and aspirations of a people is the greatest and only safety in a sane society.",
+          author: "Emma Goldman",
+        },
+        {
+          quote:
+            "The future belongs to those who give the next generation reason for hope.",
+          author: "Pierre Teilhard de Chardin",
+        },
+        {
+          quote: "The gift we can offer others is so simple a thing as hope.",
+          author: "Daniel Berrigan",
+        },
+        {
+          quote:
+            "The greatest joys are found not only in what we do and feel, but also in what we hope for.",
+          author: "Bryant H. McGill",
+        },
+        {
+          quote:
+            "The hope or climbing aspiration of a divine child is to receive and achieve Peace, Light and Bliss in infinite measure.",
+          author: "Sri Chinmoy",
+        },
+        {
+          quote:
+            "The hopeful man sees success where others see failure, sunshine where others see shadows and storm.",
+          author: "Orison Swett Marden",
+        },
+        {
+          quote:
+            "The human body experiences a powerful gravitational pull in the direction of hope. That is why the patient's hopes are the physician's secret weapon. They are the hidden ingredients in any prescription.",
+          author: "Norman Cousins",
+        },
+        {
+          quote:
+            "The natural flights of the human mind are not from pleasure to pleasure but from hope to hope.",
+          author: "Samuel Johnson",
+        },
+        {
+          quote:
+            "The past is a source of knowledge, and the future is a source of hope.",
+          author: "Stephen Ambrose",
+        },
+        {
+          quote:
+            "The phoenix hope, can wing her way through the desert skies, and still defying fortune's spite; revive from ashes and rise.",
+          author: "Miguel De Cervantes",
+        },
+        {
+          quote:
+            "The power of growth, of improvement, the power to overcome all stagnation and break through every obstacle and transform a barren wasteland into a verdant field - that unstoppable power of hope resides right within your own heart. It wells up from the rich earth of your innermost being when you face the future without doubt or fear: 'I can do more. I can grow. I can become a bigger and better human being.' ",
+          author: "Daisaku Ikeda",
+        },
+        {
+          quote:
+            "The present is the ever moving shadow that divides yesterday from tomorrow. In that lies hope.",
+          author: "Frank Lloyd Wright",
+        },
+        {
+          quote:
+            "The very least you can do in your life is to figure out what you hope for. And the most you can do is live inside that hope. Not admire it from a distance but live right in it, under its roof.",
+          author: "Barbara Kingsolver",
+        },
+        {
+          quote:
+            "There are three things I was born with in this world, and there are three things I will have until the day I die – hope, determination, and song.",
+          author: "Miriam Makeba",
+        },
+        {
+          quote:
+            "There is a saying in Tibetan, 'Tragedy should be utilized as a source of strength.' No matter what sort of difficulties, how painful experience is, if we lose our hope, that's our real disaster.",
+          author: "Dalai Lama XIV",
+        },
+        {
+          quote:
+            "There is no hope unmingled with fear, and no fear unmingled with hope.",
+          author: "Baruch Spinoza",
+        },
+        {
+          quote:
+            "There is no medicine like hope, no incentive so great, and no tonic so powerful as expectation of something tomorrow.",
+          author: "Orison Swett Marden",
+        },
+        {
+          quote:
+            "There was never a night or a problem that could defeat sunrise or hope.",
+          author: "Bernard Williams",
+        },
+        {
+          quote:
+            "They say a person needs just three things to be truly happy in this world: someone to love, something to do, and something to hope for.",
+          author: "Tom Bodett",
+        },
+        {
+          quote:
+            "Though you are disappointed is hope; never let hope fail you! Though one door is shut, there are thousands still open to you.",
+          author: "Ruckett",
+        },
+        {
+          quote:
+            "Three grand essentials to happiness in this life are something to do, something to love, and something to hope for.",
+          author: "Joseph Addison",
+        },
+        {
+          quote:
+            "Through the centuries, we faced down death by daring to hope.",
+          author: "Maya Angelou",
+        },
+        {
+          quote:
+            "To hope is to feel the presence of the inner sun. The inner sun is; the outer sun becomes.",
+          author: "Sri Chinmoy",
+        },
+        {
+          quote: "To hope is to see with the eye of the heart.",
+          author: "Sri Chinmoy",
+        },
+        {
+          quote: "To hope is to send darkest night into exile.",
+          author: "Sri Chinmoy",
+        },
+        {
+          quote:
+            "To hope means to be ready at every moment for that which is not yet born, and yet not become desperate if there is no birth in our lifetime … those whose hope is strong see and cherish all signs of new life and are ready every moment to help the birth of that which is ready to be born.",
+          author: "Erich Fromm",
+        },
+        {
+          quote: (
+            <p>
+              To hope, then, means to take a playful leap into the future—to
+              dare to spring from firm ground— to play trustingly—invest energy,
+              laughter; And one good leap encourages another— On then with the
+              dance.
+            </p>
+          ),
+          author: "Joan M. Erikson",
+        },
+        {
+          quote:
+            "To possess an undaunting Hope: Believe that in the midst of confusion and bewilderment, one is capable of seeking and holding onto the way toward a future possessing insight and vision.",
+          author: "'Ike Pono 'Oe",
+        },
+        {
+          quote:
+            "True hope dwells on the possible, even when life seems to be a plot written by someone who wants to see how much adversity we can overcome.",
+          author: "Walter Anderson",
+        },
+        {
+          quote:
+            "True hope is swift, and flies with swallow's wings; Kings it makes gods, and meaner creatures kings.",
+          author: "Shakespeare",
+        },
+        {
+          quote:
+            "Walk on with hope in your heart, and you'll never walk alone.",
+          author: "Shah Rukh Khan",
+        },
+        {
+          quote:
+            "We have always held to the hope, the belief, the conviction that there is a better life, a better world, beyond the horizon.",
+          author: "Franklin D. Roosevelt",
+        },
+        {
+          quote: "We judge of man's wisdom by his hope.",
+          author: "Ralph Waldo Emerson",
+        },
+        {
+          quote: "We live by admiration, hope and love.",
+          author: "William Wordsworth",
+        },
+        {
+          quote:
+            "We must accept finite disappointment, but we must never lose infinite hope.",
+          author: "Dr. Martin Luther King Jr.",
+        },
+        {
+          quote:
+            "We need never be hopeless because we can never be irreparably broken.",
+          author: "John Green (Looking for Alaska)",
+        },
+        {
+          quote:
+            "We should not let our fears hold us back from pursuing our hopes.",
+          author: "John F. Kennedy",
+        },
+        {
+          quote:
+            "We want to create hope for the person ... we must give hope, always hope.",
+          author: "Mother Teresa",
+        },
+        {
+          quote:
+            "We've been warned against offering the people of this nation false hope. But in the unlikely story that is America, there has never been anything false about hope.",
+          author: "Barack Obama",
+        },
+        {
+          quote:
+            "What is true of the individual will be tomorrow true of the whole nation if individuals will but refuse to lose heart and hope.",
+          author: "Mahatma Gandhi",
+        },
+        {
+          quote:
+            "When the world says, 'Give up', Hope whispers, 'Try it one more time'.",
+          author: "Author Unknown",
+        },
+        {
+          quote:
+            "When we feel defeated, we need only take a deep breath and say, 'Yes,' and hope will reappear.",
+          author: "Monroe Forester",
+        },
+        {
+          quote:
+            "When we live with hope we do not get tangled up with concerns for how our wishes will be fulfilled. (…) Hope includes an openness by which you wait for the promise to come through, even though you never know when, where, or how this might happen.",
+          author: "Henri Nouwen",
+        },
+        {
+          quote: "When you're at the end of your rope, tie a knot and hold on.",
+          author: "Theodore Roosevelt",
+        },
+        {
+          quote:
+            "When you do nothing, you feel overwhelmed and powerless. But when you get involved, you feel the sense of hope and accomplishment that comes from knowing you are working to make things better.",
+          author: "Pauline R. Kezer",
+        },
+        {
+          quote:
+            "Where some see despair, others see hope. Hope then, like beauty, is in the eye of the beholder.",
+          author: "Wendy Edey",
+        },
+        {
+          quote: "Where there is creativity, there is hope.",
+          author: "Donna Karan",
+        },
+        {
+          quote: "Where there is no hope, it is incumbent on us to invent it.",
+          author: "Albert Camus",
+        },
+        {
+          quote: (
+            <p>
+              Whether we be young or old, Our destiny, our being's heart and
+              home, Is with infinitude, and only there; With hope it is, hope
+              that can never die, Effort and expectation, and desire, And
+              something evermore about to be.
+            </p>
+          ),
+          author: "William Wordsworth",
+        },
+        { quote: "While there's life, there's hope.", author: "Cicero" },
+        {
+          quote:
+            "You are here in order to enable the world to live more amply, with greater vision, with a finer spirit of hope and achievement.",
+          author: "Woodrow Wilson",
+        },
+        {
+          quote:
+            "You may not always have a comfortable life and you will not always be able to solve all of the world’s problems at once but don’t ever underestimate the importance you can have because history has shown us that courage can be contagious and hope can take on a life of its own.",
+          author: "Michelle Obama",
+        },
+        {
+          quote:
+            "Your hopes, dreams and aspirations are legitimate. They are trying to take you airborne, above the clouds, above the storms, if you only let them.",
+          author: "William James",
+        },
+        {
+          quote: (
+            <p>
+              Tonight, I send you hope. May it be the lens of your life’s
+              vision, may it always help awaken your passion, may it help ignite
+              your convictions, may you be a stubborn, indefatigable hero of
+              hope - hope’s champion. And when dark doubts surge, may you be
+              hope’s harbor – A caretaker and defender of hope.
+            </p>
+          ),
+          author: "Senator Corey Booker",
+        },
+        {
+          quote:
+            "I have never quite understood what false hope is. All hope is 'false' in the sense that what is hoped for may not materialize. At the time of hoping one cannot know the outcome. If the hope serves to improve one's quality of life and does not cause one to avoid taking adaptive action when it is possible, nor be resentful when the hoped-for outcome does not materialize, then it is obviously desirable.",
+          author: "A. H. Epstein, 1989, p. xxv",
+        },
       ];
 
       function getRandomInt(max) {
@@ -431,13 +1423,17 @@
               </div>
               <div
                 style={{
-                  width: "50%",
                   margin: "auto",
                   padding: "40px",
                   textAlign: "center",
                 }}
               >
-                {this.state.currentQuote}
+                {this.state.currentQuote && (
+                  <>
+                    <blockquote>{this.state.currentQuote.quote}</blockquote>
+                    <cite>{this.state.currentQuote.author}</cite>
+                  </>
+                )}
               </div>
               <div
                 style={{
@@ -451,7 +1447,7 @@
                   onClick={this.generateQuote}
                   className="btn btn-white btn-animate"
                 >
-                  Give me a quote!
+                  Give me a hope quote!
                 </a>
               </div>
             </>
